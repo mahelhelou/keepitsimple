@@ -18,45 +18,36 @@
       	
          <div class="six columns info">
 
-            <h3>About Keep It Simple</h3> 
-
-            <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-            Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-            nibh id elit. 
-            </p>
-
-            <p>Lorem ipsum Sed nulla deserunt voluptate elit occaecat culpa cupidatat sit irure sint 
-            sint incididunt cupidatat esse in Ut sed commodo tempor consequat culpa fugiat incididunt.</p>
+            <?php
+               if (is_active_sidebar('footer1')) {
+                  dynamic_sidebar('footer1');
+               } else {
+                  echo 'No widgets founded';
+               }
+            ?>
 
          </div>
 
          <div class="four columns">
 
-            <h3>Photostream</h3>
-            
-            <ul class="photostream group">
-               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
-               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
-               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
-               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
-               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
-               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
-               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
-               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
-            </ul>           
+            <?php
+               if (is_active_sidebar('footer2')) {
+                  dynamic_sidebar('footer2');
+               } else {
+                  echo 'No widgets founded';
+               }
+            ?>       
 
          </div>
 
          <div class="two columns">
-            <h3 class="social">Navigate</h3>
-
-            <ul class="navigate group">
-               <li><a href="#">Home</a></li>
-               <li><a href="#">Blog</a></li>
-               <li><a href="#">Demo</a></li>
-               <li><a href="#">Archives</a></li>
-               <li><a href="#">About</a></li>
-            </ul>
+            <?php
+               if (is_active_sidebar('footer3')) {
+                  dynamic_sidebar('footer3');
+               } else {
+                  echo 'No widgets founded';
+               }
+            ?>
          </div>
 
          <p class="copyright">&copy; Copyright 2014 Keep It Simple. &nbsp; Design by <a title="Styleshout" href="http://www.styleshout.com/">Styleshout</a>.</p>
@@ -73,8 +64,9 @@
    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
    <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
    <script type="text/javascript" src="assets/js/jquery-migrate-1.2.1.min.js"></script>  
-   <script src="assets/js/main.js"></script>
+   <script src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js"></script>
 
+    <?php wp_footer(); ?>
 </body>
 
 </html>

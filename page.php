@@ -1,0 +1,48 @@
+<?php get_header(); ?>
+
+   <!-- Content
+   ================================================== -->
+   <div id="content-wrap">
+
+   	<div class="row">
+
+   		<div id="main" class="eight columns">
+           <?php
+                if (have_posts()):
+                    while (have_posts()):
+                        the_post(); ?>
+                        
+                        <article class="entry">
+
+                            <header class="entry-header">
+
+                                <h2 class="entry-title">
+                                    <?php the_title(); ?>
+                                </h2>
+                            
+                            </header> 
+                            
+                            <div class="entry-content">
+                                <!-- <p><?php /* the_content(); */ ?></p> -->
+                                <p><?php the_content(); ?></p>
+                            </div> 
+
+                        </article> <!-- end entry -->
+
+                    <?php endwhile;
+                else:
+                    echo "We're Sorry, No Posts In The Blog!";
+                endif;
+           ?>
+	
+						
+
+   		</div> <!-- end main -->
+
+   		<?php get_sidebar(); ?>
+
+   	</div> <!-- end row -->
+
+   </div> <!-- end content-wrap -->
+
+<?php get_footer(); ?>
